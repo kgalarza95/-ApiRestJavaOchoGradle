@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'war'
+}
+
+description = 'Api de demostración de novedades de java 8'
+group = 'com.vera.kevin'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //providedCompile 'javax:javaee-web-api:8.0'
+    providedCompile 'javax:javaee-api:8.0'
+    implementation 'com.google.code.gson:gson:2.9.1'
+    testImplementation 'junit:junit:4.13'
+}
+
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
